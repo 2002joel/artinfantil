@@ -9,62 +9,84 @@
 </head>
 <body>
     <header class="bg-warning text-center p-3">
-        <img src="logo.jpg" alt="Logotip de Venda d'Art Infantil" width="50" style="border-radius: 25px;">
+        <!-- Error pauta 1.1: Imatge sense atribut alt -->
+        <img src="logo.jpg" width="50" style="border-radius: 25px;">
         <h1>Venda d'Art Infantil</h1>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" aria-label="Menú principal">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Mostra el menú">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="#galeria" title="Veure la galeria">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ofertes" title="Consultar les ofertes">Ofertes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacte" title="Contactar amb nosaltres">Contacte</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#mapa" title="Veure el mapa del lloc">Mapa del Lloc</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Error pauta 1.3.1: Taula utilitzada per a disseny en lloc de dades -->
+    <table class="container-fluid">
+        <tr>
+            <td><a href="#galeria">Galeria</a></td>
+            <td><a href="#ofertes">Ofertes</a></td>
+            <td><a href="#contacte">Contacte</a></td>
+            <td><a href="#mapa">Mapa del Lloc</a></td>
+        </tr>
+    </table>
+
+    <!-- Error pauta 1.3.2: No utilitzar el camp correcte per a entrada de data -->
+    <label>Data de naixement:</label>
+    <input type="text" name="data_naixement">
 
     <section id="galeria" class="container my-4">
         <h2 class="text-center">Galeria d'Imatges</h2>
         <div class="row text-center">
-            <div class="col-md-4"><img src="art1.jpg" class="img-fluid" alt="Pintura abstracta feta per nens" style="height: 250px; width: 100%;"></div>
-            <div class="col-md-4"><img src="art2.jpg" class="img-fluid" alt="Dibuix colorit amb aquarel·les" style="height: 250px; width: 100%;"></div>
-            <div class="col-md-4"><img src="art3.jpg" class="img-fluid" alt="Obra d'art amb tècnica mixta" style="height: 250px; width: 100%;"></div>
+            <!-- Error pauta 1.4.1: Text en imatge sense alternativa -->
+            <div class="col-md-4"><img src="art1.jpg" class="img-fluid" alt=""></div>
+            <!-- Error pauta 1.4.3: Contrast insuficient -->
+            <p style="color: lightgray; background-color: white;">Aquest text té contrast insuficient</p>
+            <!-- Error pauta 1.4.5: Imatge de text sense alternativa -->
+            <img src="imatge_amb_text.jpg" class="img-fluid">
+            <!-- Error pauta 1.4.10: Text no es redimensiona bé -->
+            <p style="font-size: 8px;">Text massa petit que no s'ajusta bé a la mida de la pantalla</p>
         </div>
     </section>
 
-    <section id="ofertes" class="container text-center my-4">
-        <h2>Ofertes Especials</h2>
-        <p>Compra 2 obres i aconsegueix un 10% de descompte!</p>
-    </section>
+    <!-- Error pauta 2.2.1: Manca de control per aturar moviment automàtic -->
+    <marquee>Contingut que es mou contínuament</marquee>
+
+    <!-- Error pauta 2.3.1: Contingut que parpelleja ràpidament -->
+    <div style="background-color: red; animation: flash 0.2s infinite;">Parpelleig ràpid</div>
 
     <section id="contacte" class="container text-center my-4">
         <h2>Contacta amb Nosaltres</h2>
-        <form class="w-50 mx-auto" aria-label="Formulari de contacte">
+        <!-- Error pauta 2.4.1: Manca d'un mecanisme per saltar contingut repetitiu -->
+        <!-- Error pauta 2.4.2: Títol de la pàgina no és descriptiu -->
+        <!-- Error pauta 2.4.4: Manca d'enfocament visible per a elements interactius -->
+        <!-- Error pauta 2.4.9: No hi ha enllaç de localització actual -->
+        <form class="w-50 mx-auto">
             <div class="mb-3">
-                <label for="nom" class="form-label">Nom:</label>
-                <input type="text" class="form-control" id="nom" name="nom" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <label>Nom:</label>
+                <input type="text" class="form-control" name="nom">
             </div>
             <button type="submit" class="btn btn-warning">Enviar</button>
         </form>
     </section>
 
-    <section id="mapa" class="container text-center my-4">
-        <h2>Mapa del Lloc</h2>
-        <p>Aquí s'inclourà un mapa interactiu</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6503.941671899631!2d40.29056633639885!3d14.237625848220999" 
-                width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade" title="Mapa de la ubicació"></iframe>
-    </section>
+    <!-- Error pauta 3.1.1: Idioma de la pàgina no indicat correctament -->
+    <!-- Error pauta 3.1.2: Fragments de text en altres idiomes no identificats -->
+    <p>Bienvenue à notre site d'art</p>
+
+    <!-- Error pauta 3.2.2: Canvi de context inesperat en enviar el formulari -->
+    <form action="https://exemple.com" method="post" onsubmit="window.location='https://altresite.com';">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Error pauta 3.3.1: Manca d'identificació d'errors en formularis -->
+    <!-- Error pauta 3.3.2: Falta suggeriment de correcció d'errors -->
+    <form>
+        <label>Email:</label>
+        <input type="email" name="email">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Error pauta 4.1.1: Elements no ben formats (exemple: etiqueta no tancada correctament) -->
+    <div>
+        <p>Text sense tancar
+    </div>
+
+    <!-- Error pauta 4.1.2: Manca d'atributs ARIA en components interactius -->
+    <button onclick="alert('Hola!')">Fes clic aquí</button>
 
     <footer class="bg-dark text-white text-center p-3">
         <p>Organitzat per ArtInfantil SL | Contacte: <a href="mailto:info@artinfantil.com" class="text-white">info@artinfantil.com</a></p>
